@@ -8,3 +8,6 @@ PyPDF
 ctransformers
 aiofiles
 faiss-cpu
+streamlit
+PyPDF2
+langchain
