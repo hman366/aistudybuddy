@@ -9,10 +9,12 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.llms import HuggingFaceHub
 from langchain import PromptTemplate
 from htmlTemplates import css, bot_template, user_template
+from PyPDF2 import PdfReader
+
 
 # template for custom prompt, I found it gave better results
 template = """ 
-You are a tutor helping me study for my medical exam using the provided context. 
+You are a tutor helping me study for my exam using the provided context. 
 {query}
 """
 
@@ -111,7 +113,7 @@ def main():
         # creating a sidebar that will contain an interface for the user to upload his document
         st.markdown(
             """
-        # Medical tutor helps you study for your medical exams using your own course material:
+        # HabibAI: helps you study buddy helps you study for your exams using your own course material:
         """
         )
         st.subheader("1 - Upload your document and hit 'Process'")
