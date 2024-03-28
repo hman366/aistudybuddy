@@ -79,7 +79,7 @@ def get_conv(vects):
     llm = HuggingFaceHub(
         repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
         huggingfacehub_api_token="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",
-        model_kwargs={"temperature": 0.0, "max_length": 2048},
+        model_kwargs={"temperature": 0.7, "max_length": 2048},
     )
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(
