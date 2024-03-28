@@ -92,7 +92,7 @@ def main():
     """
     main function running everything
     """
-    st.set_page_config(page_title="Medical Tutor", page_icon=":medical_symbol:")
+    st.set_page_config(page_title="AI Tutor", page_icon=":medical_symbol:")
     st.header("Medical Tutor :medical_symbol:")
     st.write(css, unsafe_allow_html=True)
 
