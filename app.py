@@ -12,7 +12,7 @@ from htmlTemplates import css, bot_template, user_template
 
 # template for custom prompt, I found it gave better results
 template = """ 
-You are a tutor helping me study for my medical exam using the provided context. 
+You are a tutor helping me study for my exam using the provided context. 
 {query}
 """
 
