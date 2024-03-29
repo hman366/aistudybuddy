@@ -1,4 +1,6 @@
-**** DISLCIAMER THIS IDEA AND CODE BELONGS TO https://github.com/HaoES/Medical_Tutor I AM JUST USING IT FOR A SCHOOL PROJECT"
+**********
+DISLCIAMER THIS IDEA AND CODE BELONGS TO https://github.com/HaoES/Medical_Tutor I AM JUST USING IT FOR A SCHOOL PROJECT
+**********
 
 
 # AI study buddy
