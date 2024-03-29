@@ -55,21 +55,21 @@ def process_query(query):
     1- appends the query to the prompt
     2- retrieves a response using the conversation object
     3- updates the chat history
-    4- displays the chat history"""
+    4- displays only the latest response without appending previous ones"""
     question = str(prompt.format(query=query))
     response = st.session_state.conversation({"question": question})
     st.session_state.chat_history = response["chat_history"]
 
-    for i, message in enumerate(st.session_state.chat_history):
-        if i % 2 == 0:
-            st.write(
-                user_template.replace("{{MSG}}", message.content[84:]),
-                unsafe_allow_html=True,
-            )
-        else:
-            st.write(
-                bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True
-            )
+    # Display only the latest response from the AI without appending any previous responses
+    latest_bot_response = st.session_state.chat_history[-1].content
+    answer_start = latest_bot_response.find("Helpful Answer:") + len("Helpful Answer:")
+    trimmed_response = latest_bot_response[answer_start:].strip()
+
+    st.write(
+        bot_template.replace("{{MSG}}", trimmed_response),
+        unsafe_allow_html=True
+    )
+
 
 
 def get_conv(vects):
@@ -92,7 +92,7 @@ def main():
     """
     main function running everything
     """
-    st.set_page_config(page_title="AI 4.0 Tutor", page_icon="🤖")
+    st.set_page_config(page_title="AI 5.0 Tutor", page_icon="🤖")
     st.header("AI Study Buddy 🤖")
     st.write(css, unsafe_allow_html=True)
 
