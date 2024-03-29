@@ -76,6 +76,7 @@ def get_conv(vects):
     """
     llm = HuggingFaceHub(
         repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
+        huggingfacehub_api_token="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",
         model_kwargs={"tempearture": 0.4, "max_length": 2048},
     )
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
@@ -90,7 +91,7 @@ def main():
     main function running everything
     """
     st.set_page_config(page_title="AI 7.0 Study Buddy", page_icon="🤖")
-    st.header("AI study Buddy 🤖
+    st.header("AI study Buddy 🤖")
     st.write(css, unsafe_allow_html=True)
 
     # create session state object to use these variables outside of their scope
@@ -117,7 +118,7 @@ def main():
         st.subheader("1 - Upload your document and hit 'Process'")
         st.markdown(
             """
-        Example:[ACS's Lung Cancer Document](https://www.cancer.org/content/dam/CRC/PDF/Public/8703.00.pdf)
+        Example: [All about giraffe's](https://giraffeconservation.org/wp-content/uploads/2016/02/GCF-Giraffe-booklet-2017-LR-spreads-c-GCF.compressed.pdf)
         """
         )
         doc = st.file_uploader(
