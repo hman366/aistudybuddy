@@ -92,8 +92,8 @@ def main():
     """
     main function running everything
     """
-    st.set_page_config(page_title="AI 4.0 Tutor", page_icon=":robot:")
-    st.header("AI Study Buddy :robot:")
+    st.set_page_config(page_title="AI 4.0 Tutor", page_icon="🤖")
+    st.header("AI Study Buddy 🤖")
     st.write(css, unsafe_allow_html=True)
 
     # create session state object to use these variables outside of their scope
