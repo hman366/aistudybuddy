@@ -104,7 +104,7 @@ def main():
 
     # receiving user's query
     query = st.text_input(
-        """3 - Ask the tutor to help you learn from your document:
+        """3 - Ask the study buddy to help you learn from your document:
     \nExample: "Give me a question that could figure on my final exam." """
     )
     if query:
