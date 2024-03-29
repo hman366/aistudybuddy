@@ -1,17 +1,17 @@
-# Medical Tutor
+# AI study buddy
 
-## Problematic
+## Problem
 
-In the realm of medical education, students face an uphill battle marked by the complexities of vast and dynamic study materials. Traditional study methods often fall short in catering to the specific needs of individual learners, leading to a lack of personalized guidance and a struggle to master the extensive curriculum. Furthermore, the growing demand for medical education, evident in the increasing enrollments globally, calls for innovative solutions to enhance the efficiency and effectiveness of exam preparation. 
+In the realm education, students face an uphill battle marked by the complexities of vast and dynamic study materials. Traditional study methods often fall short in catering to the specific needs of individual learners, leading to a lack of personalized guidance and a struggle to master the extensive curriculum. Furthermore, the growing demand for education, evident in the increasing enrollments globally, calls for innovative solutions to enhance the efficiency and effectiveness of exam preparation. 
 
 ## Proposal
 
-'Medical Tutor' emerges as the solution to these challenges, offering a tailored approach to learning that leverages advanced technology to provide personalized study materials, generate relevant questions, and foster adaptive learning experiences for aspiring medical professionals.
+'AI study buddy' emerges as the solution to these challenges, offering a tailored approach to learning that leverages advanced technology to provide personalized study materials, generate relevant questions, and foster adaptive learning experiences for aspiring students.
 
 ## Impact
 
-Medical Tutor have the potential to significantly impact the landscape of medical education by offering a tailored and adaptive learning experience. With its personalized study questions and efficient exam preparation features, the app empowers students to navigate the challenges of medical school with greater efficiency and confidence. 
-Medical Tutor not only addresses the individual needs of learners but also contributes to the broader transformation of medical education methodologies. This tool has the potential to enhance comprehension and ultimately shape a more effective and accessible approach to medical education on a global scale.
+AI study buddy have the potential to significantly impact the landscape of education by offering a tailored and adaptive learning experience. With its personalized study questions and efficient exam preparation features, the app empowers students to navigate the challenges of school with greater efficiency and confidence. 
+AI study buddy not only addresses the individual needs of learners but also contributes to the broader transformation of education methodologies. This tool has the potential to enhance comprehension and ultimately shape a more effective and accessible approach to education on a global scale.
 
 
 ## Key Features
@@ -49,14 +49,5 @@ More features will be added later:
 
 ## Demo
 
-- [Deployed App](https://medicaltutor.streamlit.app/)
-- [Video Demo](https://youtu.be/qFfjY2u_ruo)
+*coming soon*
 
-## Instructions
-- The app is deployed on Streamlit Community Cloud you can access it [here](https://medicaltutor.streamlit.app/).  
-
-To run the app locally please follow these steps:
-1. `git clone https://github.com/HaoES/Medical_Tutor.git`
-2. `cd Medical_Tutor`
-3. `pip install -r requirements.txt`
-4. `streamlit run app.py`
