@@ -43,22 +43,19 @@ def get_chunks(text):
 
 # Function to process user query
 def process_query(query):
+    """Processes the query:
+    1- appends the query to the prompt
+    2- retrieves a response using the conversation object
+    3- updates the chat history
+    4- displays the chat history"""
     question = str(prompt.format(query=query))
     response = st.session_state.conversation({"question": question})
     st.session_state.chat_history = response["chat_history"]
 
-    for i, message in enumerate(st.session_state.chat_history):
-        if i % 2 == 0:
-            st.write(
-                user_template.replace("{{MSG}}", message.content[84:]),
-                unsafe_allow_html=True,
-            )
-        else:
-            # Modify to show only the response, not the previous messages
-            if "Human:" not in message.content:
-                st.write(
-                    bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True
-                )
+    for message in st.session_state.chat_history:
+        if message.content.startswith("Helpful Answer:"):
+            st.write(bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True)
+            break
 
 # Function to create conversation chain
 def get_conv(vects):
