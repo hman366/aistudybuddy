@@ -79,7 +79,7 @@ def get_conv(vects):
 
 # Main function
 def main():
-    st.set_page_config(page_title="AI 6.0 Tutor", page_icon="🤖")
+    st.set_page_config(page_title="AI 7.0 Tutor", page_icon="🤖")
     st.header("AI Study Buddy 🤖")
     st.write(css, unsafe_allow_html=True)
 
