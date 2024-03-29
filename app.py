@@ -120,7 +120,7 @@ def main():
         st.subheader("1 - Upload your document and hit 'Process'")
         st.markdown(
             """
-        Example:[ACS's Lung Cancer Document](https://www.cancer.org/content/dam/CRC/PDF/Public/8703.00.pdf)
+        Example:[All about giraffe's](https://giraffeconservation.org/wp-content/uploads/2016/02/GCF-Giraffe-booklet-2017-LR-spreads-c-GCF.compressed.pdf)
         """
         )
         doc = st.file_uploader(
