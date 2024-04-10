@@ -7,7 +7,7 @@ DISLCIAMER THIS IDEA AND CODE BELONGS TO https://github.com/HaoES/Medical_Tutor 
 
 ## Problem
 
-In the realm education, students face an uphill battle marked by the complexities of vast and dynamic study materials. Traditional study methods often fall short in catering to the specific needs of individual learners, leading to a lack of personalized guidance and a struggle to master the extensive curriculum. Furthermore, the growing demand for education, evident in the increasing enrollments globally, calls for innovative solutions to enhance the efficiency and effectiveness of exam preparation. 
+In the realm of education, students face an uphill battle marked by the complexities of vast and dynamic study materials. Traditional study methods often fall short in catering to the specific needs of individual learners, leading to a lack of personalized guidance and a struggle to master the extensive curriculum. Furthermore, the growing demand for education, evident in the increasing enrollments globally, calls for innovative solutions to enhance the efficiency and effectiveness of exam preparation. 
 
 ## Proposal
 
