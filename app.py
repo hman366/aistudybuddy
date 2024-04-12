@@ -54,29 +54,25 @@ def process_query(query):
     1- appends the query to the prompt
     2- retrieves a response using the conversation object
     3- updates the chat history
-    4- displays the question and helpful answer from the output
+    4- displays the relevant part of the response
     """
     question = str(prompt.format(query=query))
     response = st.session_state.conversation({"question": question})
     st.session_state.chat_history = response["chat_history"]
 
-    # Extract the question and helpful answer from the output
-    question_text = ""
-    helpful_answer_text = ""
+    # Extract the relevant part of the response
+    relevant_part = ""
+    started_extraction = False
+    for message in reversed(st.session_state.chat_history):
+        if "Helpful Answer:" in message.content:
+            break
+        if started_extraction:
+            relevant_part = message.content + relevant_part
+        if "Question:" in message.content:
+            started_extraction = True
 
-    for message in st.session_state.chat_history:
-        content = message.content.strip()
-        if content.startswith("Question:"):
-            question_text = content.replace("Question:", "").strip()
-        elif content.startswith("Helpful Answer:"):
-            helpful_answer_text = content.replace("Helpful Answer:", "").strip()
-
-    # Display the question and helpful answer
-    if question_text and helpful_answer_text:
-        st.write("Question:", question_text)
-        st.write("Helpful Answer:", helpful_answer_text)
-    else:
-        st.write("Question and/or helpful answer not found.")
+    if relevant_part:
+        st.write(relevant_part.strip(), unsafe_allow_html=True)
 
 
 def get_conv(vects):
