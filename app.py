@@ -49,26 +49,30 @@ def get_chunks(text):
 
 
 def process_query(query):
-    """Processes the query:
+    """
+    Processes the query:
     1- appends the query to the prompt
     2- retrieves a response using the conversation object
     3- updates the chat history
-    4- displays the chat history"""
+    4- displays the relevant part of the response
+    """
     question = str(prompt.format(query=query))
     response = st.session_state.conversation({"question": question})
     st.session_state.chat_history = response["chat_history"]
 
-    for i, message in enumerate(st.session_state.chat_history):
-        if i % 2 == 0:
-            st.write(
-                user_template.replace("{{MSG}}", message.content[84:]),
-                unsafe_allow_html=True,
-            )
-        else:
-            st.write(
-                bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True
-            )
+    # Extract the relevant part of the response
+    relevant_part = ""
+    started_extraction = False
+    for message in reversed(st.session_state.chat_history):
+        if "Helpful Answer:" in message.content:
+            break
+        if started_extraction:
+            relevant_part = message.content + relevant_part
+        if "Question:" in message.content:
+            started_extraction = True
 
+    if relevant_part:
+        st.write(relevant_part.strip(), unsafe_allow_html=True)
 
 def get_conv(vects):
     """
@@ -77,7 +81,7 @@ def get_conv(vects):
     llm = HuggingFaceHub(
         repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
         huggingfacehub_api_token="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",
-        model_kwargs={"tempearture": 0.4, "max_length": 2048},
+        model_kwargs={"tempearture": 0.1, "max_length": 2048},
     )
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(
