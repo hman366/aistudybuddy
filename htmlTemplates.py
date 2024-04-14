@@ -37,7 +37,7 @@ bot_template = """
 user_template = """
 <div class="chat-message user">
     <div class="avatar">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNVi9cbmMkUabLiF_3kfI94qngwPIM4gnrztEUv6Hopw&s" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
     </div>    
     <div class="message">{{MSG}}</div>
 </div>
