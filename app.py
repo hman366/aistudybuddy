@@ -48,7 +48,7 @@ def get_chunks(text):
     return chunks
 
 
- python
+
 
 def process_query(query):
     """Processes the query:
