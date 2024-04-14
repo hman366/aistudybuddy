@@ -49,30 +49,25 @@ def get_chunks(text):
 
 
 def process_query(query):
-    """
-    Processes the query:
+    """Processes the query:
     1- appends the query to the prompt
     2- retrieves a response using the conversation object
     3- updates the chat history
-    4- displays the relevant part of the response
-    """
+    4- displays the chat history"""
     question = str(prompt.format(query=query))
     response = st.session_state.conversation({"question": question})
     st.session_state.chat_history = response["chat_history"]
 
-    # Extract the relevant part of the response
-    relevant_part = ""
-    started_extraction = False
-    for message in reversed(st.session_state.chat_history):
-        if "Helpful Answer:" in message.content:
-            break
-        if started_extraction:
-            relevant_part = message.content + relevant_part
-        if "Question:" in message.content:
-            started_extraction = True
-
-    if relevant_part:
-        st.write(relevant_part.strip(), unsafe_allow_html=True)
+    for i, message in enumerate(st.session_state.chat_history):
+        if i % 2 == 0:
+            st.write(
+                user_template.replace("{{MSG}}", message.content[84:]),
+                unsafe_allow_html=True,
+            )
+        else:
+            st.write(
+                bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True
+            )
 
 
 def get_conv(vects):
@@ -95,7 +90,7 @@ def main():
     """
     main function running everything
     """
-    st.set_page_config(page_title="AI 9.0 Study Buddy", page_icon="🤖")
+    st.set_page_config(page_title="AI Study Buddy  10.0", page_icon="🤖")
     st.header("AI study Buddy 🤖")
     st.write(css, unsafe_allow_html=True)
 
@@ -108,7 +103,7 @@ def main():
     # receiving user's query
     query = st.text_input(
         """3 - Ask the tutor to help you learn from your document:
-    \nExample: "Give me a question that could figure on my final exam." """
+    \nExample: "Give me a question that could showp up on my final exam." """
     )
     if query:
         process_query(query)
