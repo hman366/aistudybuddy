@@ -48,6 +48,8 @@ def get_chunks(text):
     return chunks
 
 
+ python
+
 def process_query(query):
     """Processes the query:
     1- appends the query to the prompt
@@ -65,8 +67,13 @@ def process_query(query):
                 unsafe_allow_html=True,
             )
         else:
+            token = "Helpful Answer:"
+            token_index = message.content.find(token)
+            start_index = token_index + len(token)
+            stripped = message.content[start_index:]
+
             st.write(
-                bot_template.replace("{{MSG}}", message.content), unsafe_allow_html=True
+                bot_template.replace("{{MSG}}", stripped), unsafe_allow_html=True
             )
 
 
