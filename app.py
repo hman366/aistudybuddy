@@ -65,7 +65,7 @@ def process_query(query):
 
             st.write(
             
-                user_template.replace("{{MSG}}", message.content[139:]),
+                user_template.replace("{{MSG}}", message.content[141:]),
                 unsafe_allow_html=True,
             )
         else:
