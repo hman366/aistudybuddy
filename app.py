@@ -68,7 +68,7 @@ def process_query(query):
             )
         else:
             token = "Helpful Answer:"
-            token_index = message.content.find(token)
+            token_index = message.content.rfind(token)
             start_index = token_index + len(token)
             stripped = message.content[start_index:]
 
