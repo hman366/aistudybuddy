@@ -62,8 +62,10 @@ def process_query(query):
 
     for i, message in enumerate(st.session_state.chat_history):
         if i % 2 == 0:
+
             st.write(
-                user_template.replace("{{MSG}}", message.content[84:]),
+            
+                user_template.replace("{{MSG}}", message.content[139:]),
                 unsafe_allow_html=True,
             )
         else:
