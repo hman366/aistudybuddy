@@ -28,7 +28,7 @@ css = """
 bot_template = """
 <div class="chat-message bot">
     <div class="avatar">
-        <img src="https://i.ibb.co/RDR6q2g/medical-robot.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover">
+        <img src="https://blog.internxt.com/content/images/2022/12/Blog---AI---2.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover">
     </div>
     <div class="message">{{MSG}}</div>
 </div>
