@@ -112,7 +112,7 @@ def main():
     # receiving user's query
     query = st.text_input(
         """3 - Ask the tutor to help you learn from your document:
-    \nExample: "Give me a question that could showp up on my final exam." """
+    \nExample: "Give me a question that could show up on my final exam." """
     )
     if query:
         process_query(query)
