@@ -86,7 +86,7 @@ def get_conv(vects):
     llm = HuggingFaceHub(
         repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
         huggingfacehub_api_token="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",
-        model_kwargs={"tempearture": 0.1, "max_length": 2048},
+        model_kwargs={"tempearture": 0.1, "max_length": 8192},
     )
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(
@@ -115,7 +115,8 @@ def main():
     \nExample: "Give me a question that could show up on my final exam." """
     )
     if query:
-        process_query(query)
+        if st.session_state.conversation != None:
+            process_query(query)
 
     with st.sidebar:
         # creating a sidebar that will contain an interface for the user to upload his document
